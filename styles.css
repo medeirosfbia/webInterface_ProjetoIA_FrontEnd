@@ -1,6 +1,7 @@
 /* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
+    font-size: 22px;
     background-color: #f0f0f0;
     margin: 0;
     height: 100vh;
@@ -74,12 +75,26 @@ body {
 /* Estilos das mensagens */
 .user-message {
     text-align: right;
-    margin: 5px;
+    max-width: 60%;
+    margin: 15px 0 15px auto; 
+    padding: 5px 15px;
+    color: #f0f0f0;
+    background-color: #3472e6;
+    border-radius: 12px;
+    word-wrap: break-word;
 }
+
 
 .bot-message {
     text-align: left;
-    margin: 5px;
+    max-width: 60%;
+    margin: 15px auto 15px 0; 
+    padding: 5px 15px;
+    color: #f0f0f0;
+    background-color: #535353;
+    border-radius: 12px;
+    word-wrap: break-word;
+
 }
 
 /* Estilos do campo de entrada */
@@ -88,22 +103,26 @@ body {
 }
 
 #user-input {
+    font-size: 20px;
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin: 5px;
 }
 
 #send-btn {
-    background-color: #28a745;
+    font-size: 20px;
+    width: fit-content;
+    background-color: #3472e6;
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
-    margin-left: 10px;
+    margin: 5px;
 }
 
 #send-btn:hover {
-    background-color: #218838;
+    background-color: #1752c0;
 }
