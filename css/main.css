@@ -47,6 +47,7 @@ body {
 }
 
 .sidebar ul li {
+    font-size: 25px;
     padding: 10px;
     margin-bottom: 10px;
     background-color: var(--main-bg-color);
