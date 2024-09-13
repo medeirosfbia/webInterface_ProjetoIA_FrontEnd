@@ -1,0 +1,9 @@
+element {
+    --main-bg-color: #3472e6;
+    --main-bg-hover-color: #1054d3;
+}
+
+:root {
+    --main-bg-color: #3472e6;
+    --main-bg-hover-color: #1054d3;
+}
