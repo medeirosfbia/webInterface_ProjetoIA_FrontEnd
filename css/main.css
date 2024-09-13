@@ -44,10 +44,11 @@ body {
 .sidebar ul {
     list-style: none;
     padding: 0;
+    font-size: 18px;
 }
 
 .sidebar ul li {
-    font-size: 25px;
+    font-size: 18px;
     padding: 10px;
     margin-bottom: 10px;
     background-color: var(--main-bg-color);
