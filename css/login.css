@@ -1,4 +1,7 @@
 /* Estilos globais */
+:root
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -27,12 +30,14 @@ body {
     width: 300px;
     text-align: center;
     color: #fff;
+    font-size: 18px;
 }
 
 /* Título */
 .login-box h2 {
     margin-bottom: 20px;
-    color: #4ea5f3; /* Destaque em azul */
+    color: var(--main-bg-color); /* Destaque em azul */
+    font-size: 30px;
 }
 
 /* Grupo de inputs */
@@ -52,7 +57,7 @@ body {
 .input-group input {
     width: 100%;
     padding: 10px;
-    border: none;
+    border: 2px solid #000;
     border-radius: 4px;
     background-color: #1a1a1a;
     color: #fff;
@@ -63,14 +68,14 @@ body {
 
 /* Input focado */
 .input-group input:focus {
-    border: 2px solid #4ea5f3; /* Destaque azul ao focar */
+    border-color: var(--main-bg-color); /* Destaque azul ao focar */
 }
 
 /* Botão de login */
 #login-btn {
     width: 100%;
     padding: 10px;
-    background-color: #4ea5f3;
+    background-color: var(--main-bg-color);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -79,7 +84,7 @@ body {
 }
 
 #login-btn:hover {
-    background-color: #3578c6;
+    background-color: var(--main-bg-hover-color);
 }
 
 /* Mensagem de erro */
