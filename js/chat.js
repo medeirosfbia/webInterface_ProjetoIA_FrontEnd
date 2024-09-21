@@ -1,3 +1,5 @@
+const base_url = 'http://localhost:5000'
+
 document.getElementById('send-btn').addEventListener('click', sendMessage);
 document.getElementById('user-input').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
@@ -17,10 +19,9 @@ function sendMessage() {
     inputField.value = '';
 
     // Simular resposta do chatbot
-    setTimeout(() => {
         const botResponse = getBotResponse(userMessage);
         appendMessage(botResponse, 'bot-message');
-    }, 1000);
+        
 }
 
 function appendMessage(message, className) {
@@ -32,7 +33,19 @@ function appendMessage(message, className) {
     chatBox.scrollTop = chatBox.scrollHeight; // rolar para a parte inferior
 }
 
-function getBotResponse(userMessage) {
-    // Aqui você pode adicionar lógica para gerar respostas mais sofisticadas
-    return "Você disse: " + userMessage;
+const getBotResponse = () => {
+    const userPrompt = $("#user-input").val();
+    const body = `{"query" : "${userPrompt}"}`
+
+    $.ajax({
+        type: 'POST',
+        url: `${base_url}/query`,
+        contentType: 'application/json',
+        dataType: 'json',
+        data: `{"query" : "${userMessage}"}`,
+        success: (response) => {},
+        error: (res) => { 
+            console.log(res);
+        }
+    });
 }
