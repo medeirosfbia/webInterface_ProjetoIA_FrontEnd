@@ -8,7 +8,6 @@ body {
     display: block;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #1a1a1a; /* Fundo escuro */
 }
 
@@ -18,7 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 25%;
+    margin-top: 5%;
     margin-bottom: 30px;
 }
 
@@ -65,6 +64,21 @@ body {
     font-size: 16px;
     outline: none;
     box-sizing: border-box;
+}
+
+
+.nameAndLastName {
+    display: inline-flex;
+    justify-content: space-between; /* Adicionar espaço automaticamente entre os campos */
+    width: 100%;
+}
+
+.nameAndLastName .input-group {
+    width: 48%; /* Ajuste a largura dos campos para caberem lado a lado */
+}
+
+.nameAndLastName .input-group input {
+    width: 100%; /* Garantir que os inputs usem toda a largura disponível */
 }
 
 /* Input focado */
