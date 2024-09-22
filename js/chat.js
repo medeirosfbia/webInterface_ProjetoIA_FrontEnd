@@ -19,8 +19,8 @@ function sendMessage() {
     inputField.value = '';
 
     // Simular resposta do chatbot
-        const botResponse = getBotResponse(userMessage);
-        appendMessage(botResponse, 'bot-message');
+    getBotResponse(userMessage);
+        
         
 }
 
@@ -33,42 +33,21 @@ function appendMessage(message, className) {
     chatBox.scrollTop = chatBox.scrollHeight; // rolar para a parte inferior
 }
 
-const getBotResponse = () => {
-    const userPrompt = $("#user-input").val();
-    const body = `{"query" : "${userPrompt}"}`
+const getBotResponse = (userPrompt) => {
+    const body = `{"query" : "${userPrompt}"}`;
 
     $.ajax({
         type: 'POST',
         url: `${base_url}/query`,
         contentType: 'application/json',
         dataType: 'json',
-        data: `{"query" : "${userMessage}"}`,
-        success: (response) => {},
+        data: body,
+        success: (response) => {
+            console.log(response);
+            appendMessage(response["answer"], 'bot-message');
+        },
         error: (res) => { 
             console.log(res);
         }
     });
-}
-
-
-
-const sidebar = document.getElementById('sidebar');
-        const toggleButton = document.getElementById('sidebar-toggle-btn');
-
-        // Exibir botão de menu apenas em dispositivos pequenos
-        window.addEventListener('resize', function() {
-            if (window.innerWidth <= 768) {
-                toggleButton.style.display = 'block';
-            } else {
-                toggleButton.style.display = 'none';
-                sidebar.classList.remove('show'); // Garantir que a sidebar esteja fechada
-            }
-        });
-
-        // Mostrar ou ocultar a sidebar quando o botão for clicado
-        toggleButton.addEventListener('click', function() {
-            sidebar.classList.toggle('show');
-        });
-
-        // Simula o comportamento da função resize ao carregar a página
-        window.dispatchEvent(new Event('resize'));
+};
