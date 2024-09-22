@@ -49,3 +49,26 @@ const getBotResponse = () => {
         }
     });
 }
+
+
+
+const sidebar = document.getElementById('sidebar');
+        const toggleButton = document.getElementById('sidebar-toggle-btn');
+
+        // Exibir botão de menu apenas em dispositivos pequenos
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768) {
+                toggleButton.style.display = 'block';
+            } else {
+                toggleButton.style.display = 'none';
+                sidebar.classList.remove('show'); // Garantir que a sidebar esteja fechada
+            }
+        });
+
+        // Mostrar ou ocultar a sidebar quando o botão for clicado
+        toggleButton.addEventListener('click', function() {
+            sidebar.classList.toggle('show');
+        });
+
+        // Simula o comportamento da função resize ao carregar a página
+        window.dispatchEvent(new Event('resize'));

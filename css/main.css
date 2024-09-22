@@ -134,3 +134,21 @@ body {
 #send-btn:hover {
     background-color: var(--main-bg-hover-color);
 }
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); /* Oculta a sidebar fora da tela */
+        position: absolute;
+        z-index: 1000;
+    }
+
+    .sidebar.show {
+        transform: translateX(0); /* Reexibe a sidebar */
+    }
+
+    .chat-container {
+        width: 100%; /* O chat ocupará 100% da tela */
+    }
+}
