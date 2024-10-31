@@ -42,6 +42,7 @@ document.getElementById('register-form').addEventListener('submit', function(eve
                     console.log(res);
                     errorMessage.style.display = "none";
                     window.location.href = "index.html";
+                    alert("Cadastrado com sucesso!");
                 },
                 error: (res) => {
                     console.log(res);
